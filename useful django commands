@@ -1,0 +1,36 @@
+activate virtualenv
+  source ~/codes/django_fav_hue/bin/activate
+
+start the django server:
+  python manage.py runserver  ip:port
+
+create new app inside project:
+  python manage.py startapp appname
+
+migrate database
+  #The migrate command looks at the INSTALLED_APPS setting and creates any
+  necessary database tables according to the database settings in
+  your mysite/settings.py file and the database migrations shipped with the app
+  python manage.py migrate
+
+make a new migration based on models in app
+  #By running makemigrations, you’re telling Django that you’ve made some changes to
+  your models (in this case, you’ve made new ones) and that you’d like the changes
+  to be stored as a migration.
+  python manage.py makemigrations appname
+
+see the sql the new migration would make:
+  python manage.py sqlmigrate appname 0001
+
+interactive django API / ORM shell
+  python manage.py shell
+    then run:
+    >>> import django
+    >>> django.setup()
+    https://docs.djangoproject.com/en/1.9/intro/tutorial02/#playing-with-the-api
+
+    - Get all objects of a model
+    Modelname.objects.all()
+
+    -Search
+    Modelname.objects.filter(id=1)

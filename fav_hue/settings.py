@@ -10,7 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.9/ref/settings/
 """
 
-#admin password = django1234
+#admin acc= root password = django1234
 
 import os
 
